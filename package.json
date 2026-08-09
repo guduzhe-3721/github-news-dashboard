@@ -1,0 +1,38 @@
+{
+  "name": "github-news-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && vite build",
+    "build:e2e": "npm run typecheck && vite build --base=/news-dashboard/",
+    "test": "vitest run",
+    "test:e2e": "npm run build:e2e && playwright test",
+    "test:watch": "vitest",
+    "update:news": "tsx scripts/update-news.ts",
+    "check": "npm run typecheck && npm test && vite build"
+  },
+  "dependencies": {
+    "@google/genai": "^2.16.0",
+    "html-entities": "^2.6.0",
+    "rss-parser": "^3.13.0",
+    "sanitize-html": "^2.17.6",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^26.2.0",
+    "@types/sanitize-html": "^2.16.1",
+    "@types/xml2js": "^0.4.14",
+    "@vitest/coverage-v8": "^4.1.10",
+    "jsdom": "^30.0.1",
+    "tsx": "^4.23.11",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.1",
+    "vitest": "^4.1.10"
+  }
+}
